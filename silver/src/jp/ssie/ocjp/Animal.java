@@ -6,7 +6,7 @@ public class Animal {
 	private String name;
 	
 	public Animal () {
-		System.out.println("動物を登録しました");
+		System.out.println("宮田竜希");
 	}
 	
 	public void setAnimal(String n, String v) {
