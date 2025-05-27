@@ -36,7 +36,7 @@ public class Practice1 {
 			System.out.println("回文数です");
 		}
 		else {
-			System.out.println("回文数ではありません");
+			System.out.println("回文数ありません");
 		}
 			
 		
