@@ -15,6 +15,6 @@ public class Animal {
 	}
 	
 	public void showAnimal() {
-		System.out.println("宮田" + name + "で" + voice + "と鳴きます");
+		System.out.println("武夫" + name + "で" + voice + "と鳴きます");
 	}
 }
