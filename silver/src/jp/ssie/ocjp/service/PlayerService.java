@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -13,11 +12,11 @@ import jp.ssie.ocjp.utils.Db;
 
 public class PlayerService {
 
-	public void select() {
+	public ArrayList<Player> selet() {
 		
 		String sql = "SELECT * FROM players";
 		ArrayList<Player> players = new ArrayList<>();	
-		
+	
 		try(
 			Connection conn = Db.open(); 
 			Statement stmt = conn.createStatement();
@@ -39,9 +38,10 @@ public class PlayerService {
 				players.add(a);
 			}	
 		}
-		catch(SQLException e) {
+		catch(Exception e) {
 			e.printStackTrace();
 		}	
+		return players;
 	}
 	
 	
@@ -66,7 +66,7 @@ public class PlayerService {
 			if (res.next()) {
 				id = res.getInt(1);
 			}
-		} catch (SQLException se) {
+		} catch (Exception se) {
 			se.printStackTrace();
 		}
 		return id;
@@ -90,7 +90,7 @@ public class PlayerService {
 			ps.setInt(9, object.getId());
 			ps.executeUpdate();
 
-		} catch (SQLException se) {
+		} catch (Exception se) {
 			se.printStackTrace();
 		}
 	}
@@ -103,7 +103,7 @@ public class PlayerService {
 			ps.setInt(1, id);
 			ps.executeUpdate();
 			
-		} catch (SQLException se) {
+		} catch (Exception se) {
 			se.printStackTrace();
 		}
 	}
